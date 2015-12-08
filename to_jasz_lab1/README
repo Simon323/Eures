@@ -1,0 +1,16 @@
+klasyczne zachlanne algorytmy najblizszego sasiada
+			      rozbudowy cyklu
+			      grasp
+
+co nalezy podac : srednia, minimalna , maksymalna wartosc(jakosc) rozwiazania
+najlepsze rozwiazania(permutacja,wizualizacja)
+wierzcholki numerujemy od zera
+
+rozwiazanie : zawsze zaczynamy od wierzcholka zerowego, potem w kierunku sasiada, ktory ma mniejszy index
+
+graficzna wizualizacja tych rozwiazan
+
+
+
+GRASP:
+10% wierzcholkow niewybranych stanowi liste kandydatow
