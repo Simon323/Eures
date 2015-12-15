@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class NN {
-    public void Run(){
+    public int Run(){
         Data data = new Data();
         ArrayList<Integer> resultList = new ArrayList<Integer>();
         ArrayList<ArrayList<Vertex>> vertexList = data.getVertexList();
@@ -28,6 +28,7 @@ public class NN {
             System.out.println(i);
         }
         System.out.println("Dystans " + distance);
+        return distance;
     }
 
     public Vertex FindBestEdge(ArrayList<Vertex> edgeVertex, ArrayList<Integer> unusedVertexList){

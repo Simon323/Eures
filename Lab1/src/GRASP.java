@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class GRASP {
-    public void Run(){
+    public int Run(){
         Data data = new Data();
         ArrayList<Integer> resultList = new ArrayList<Integer>();
         ArrayList<Integer> unusedVertexList = Universal.FillUnusedVertexList();
@@ -28,6 +28,7 @@ public class GRASP {
             System.out.println(i);
         }
         System.out.println("Dystans " + distance);
+        return distance;
     }
 
     public Vertex ChoiceRandomFromBestEdge(ArrayList<Vertex> edgeVertex, ArrayList<Integer> unusedVertexList){
