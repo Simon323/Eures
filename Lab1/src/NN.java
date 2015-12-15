@@ -6,13 +6,14 @@ public class NN {
         ArrayList<Integer> resultList = new ArrayList<Integer>();
         ArrayList<ArrayList<Vertex>> vertexList = data.getVertexList();
         ArrayList<Integer> unusedVertexList = Universal.FillUnusedVertexList();
+        int distance = 0;
 
         int randomVertex = Universal.RandVertex(0, (unusedVertexList.size() - 1));
         resultList.add(randomVertex);
 
         unusedVertexList.remove(new Integer(randomVertex));
         Vertex bestVertex = FindBestEdge(vertexList.get(randomVertex), unusedVertexList);
-
+        distance += bestVertex.edge;
         while (true){
             resultList.add(bestVertex.idVertex);
             unusedVertexList.remove(new Integer(bestVertex.idVertex));
@@ -20,11 +21,13 @@ public class NN {
                 break;
             }
             bestVertex = FindBestEdge(vertexList.get(bestVertex.idVertex), unusedVertexList);
+            distance += bestVertex.edge;
         }
 
         for (Integer i: resultList){
             System.out.println(i);
         }
+        System.out.println("Dystans " + distance);
     }
 
     public Vertex FindBestEdge(ArrayList<Vertex> edgeVertex, ArrayList<Integer> unusedVertexList){

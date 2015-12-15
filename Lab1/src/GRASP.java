@@ -6,13 +6,14 @@ public class GRASP {
         ArrayList<Integer> resultList = new ArrayList<Integer>();
         ArrayList<Integer> unusedVertexList = Universal.FillUnusedVertexList();
         ArrayList<ArrayList<Vertex>> vertexList = data.getVertexList();
+        int distance = 0;
 
         int randomVertex = Universal.RandVertex(0, (unusedVertexList.size() - 1));
         resultList.add(randomVertex);
 
         unusedVertexList.remove(new Integer(randomVertex));
         Vertex bestVertex = ChoiceRandomFromBestEdge(vertexList.get(randomVertex), unusedVertexList);
-
+        distance += bestVertex.edge;
         while (true){
             resultList.add(bestVertex.idVertex);
             unusedVertexList.remove(new Integer(bestVertex.idVertex));
@@ -20,11 +21,13 @@ public class GRASP {
                 break;
             }
             bestVertex = ChoiceRandomFromBestEdge(vertexList.get(bestVertex.idVertex), unusedVertexList);
+            distance += bestVertex.edge;
         }
 
         for (Integer i: resultList){
             System.out.println(i);
         }
+        System.out.println("Dystans " + distance);
     }
 
     public Vertex ChoiceRandomFromBestEdge(ArrayList<Vertex> edgeVertex, ArrayList<Integer> unusedVertexList){
