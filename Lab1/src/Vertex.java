@@ -1,9 +1,3 @@
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-
-/**
- * Created by Szymon-Acer on 14.12.2015.
- */
 public class Vertex {
     public int idVertex;
     public int edge;

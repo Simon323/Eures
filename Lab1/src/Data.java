@@ -9,18 +9,7 @@ import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-/**
- * Created by Szymon-Acer on 13.12.2015.
- */
 public class Data {
-
-
-/*    public static void main(String args[]){
-        Data data = new Data();
-        ArrayList<ArrayList<Vertex>> vertexArrayList = data.getVertexList();
-
-
-    }*/
 
     public ArrayList<ArrayList<Vertex>> getVertexList(){
 

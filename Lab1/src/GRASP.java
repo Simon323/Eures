@@ -1,22 +1,17 @@
 import java.util.ArrayList;
-import java.util.Optional;
-import java.util.Random;
 
-/**
- * Created by Szymon-Acer on 14.12.2015.
- */
 public class GRASP {
     public void Run(){
         Data data = new Data();
         ArrayList<Integer> resultList = new ArrayList<Integer>();
-        ArrayList<Integer> unusedVertexList = FillUnusedVertexList();
+        ArrayList<Integer> unusedVertexList = Universal.FillUnusedVertexList();
         ArrayList<ArrayList<Vertex>> vertexList = data.getVertexList();
 
-        int randomVertex = RandVertex(0, (unusedVertexList.size() - 1));
+        int randomVertex = Universal.RandVertex(0, (unusedVertexList.size() - 1));
         resultList.add(randomVertex);
 
         unusedVertexList.remove(new Integer(randomVertex));
-        Vertex bestVertex = FindBestEdge(vertexList.get(randomVertex), unusedVertexList);
+        Vertex bestVertex = ChoiceRandomFromBestEdge(vertexList.get(randomVertex), unusedVertexList);
 
         while (true){
             resultList.add(bestVertex.idVertex);
@@ -24,30 +19,17 @@ public class GRASP {
             if(unusedVertexList.size() < 1){
                 break;
             }
-            bestVertex = FindBestEdge(vertexList.get(bestVertex.idVertex), unusedVertexList);
+            bestVertex = ChoiceRandomFromBestEdge(vertexList.get(bestVertex.idVertex), unusedVertexList);
         }
 
-        for (Integer a : resultList){
-            System.out.println(a);
+        for (Integer i: resultList){
+            System.out.println(i);
         }
-/*        System.out.println();
-        System.out.println("Wybrany node");
-        System.out.println("id: "+ ind.idVertex + " edge: " + ind.edge);*/
-
     }
 
-    public int RandVertex(int min, int max) {
-
-        Random rand = new Random();
-        int randomNum = rand.nextInt((max - min) + 1) + min;
-
-        return randomNum;
-    }
-
-    public Vertex FindBestEdge(ArrayList<Vertex> edgeVertex, ArrayList<Integer> unusedVertexList){
+    public Vertex ChoiceRandomFromBestEdge(ArrayList<Vertex> edgeVertex, ArrayList<Integer> unusedVertexList){
 
         ArrayList<Vertex> bestEdgeList = new ArrayList<Vertex>();
-        //System.out.println("Wierzcholerk startowy: " + start);
 
         for (Integer unusedVertex : unusedVertexList){
             Vertex currentVertex = new Vertex(0,0);
@@ -77,25 +59,8 @@ public class GRASP {
             }
         }
 
-/*        System.out.println("Najlepsze opcje");
-        for (int k = 0; k < bestEdgeList.size(); k++){
-            System.out.print("wierzcholerk: " + bestEdgeList.get(k).idVertex);
-            System.out.print("krawedz: " + bestEdgeList.get(k).edge);
-            System.out.println();
-        }*/
-
-        int selectedVertex = RandVertex(0, (bestEdgeList.size() - 1));
+        int selectedVertex = Universal.RandVertex(0, (bestEdgeList.size() - 1));
 
         return bestEdgeList.get(selectedVertex);
-    }
-
-    public ArrayList<Integer> FillUnusedVertexList(){
-
-        ArrayList<Integer> result = new ArrayList<Integer>();
-        for (int i = 0; i < 100; i++){
-            result.add(i);
-        }
-
-        return  result;
     }
 }
