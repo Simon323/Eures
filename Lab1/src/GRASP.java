@@ -24,8 +24,9 @@ public class GRASP {
             distance += bestVertex.edge;
         }
 
+
         for (Integer i: resultList){
-            System.out.println(i);
+            System.out.print(i + ", ");
         }
         System.out.println("Dystans " + distance);
         return distance;

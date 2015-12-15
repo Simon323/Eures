@@ -25,8 +25,9 @@ public class NN {
         }
 
         for (Integer i: resultList){
-            System.out.println(i);
+            System.out.print(i + ", ");
         }
+
         System.out.println("Dystans " + distance);
         return distance;
     }

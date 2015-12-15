@@ -10,13 +10,14 @@ public class Main {
 
         GRASP grasp = new GRASP();
         NN nn = new NN();
-        grasp.Run();
-        nn.Run();
+        //grasp.Run();
+        //nn.Run();
 
+        System.out.println("GRASP");
         for (int i = 0; i < 100; i++) {
             graspList.add(grasp.Run());
         }
-
+        System.out.println("NN");
         for (int i = 0; i < 100; i++) {
             nnList.add(nn.Run());
         }
