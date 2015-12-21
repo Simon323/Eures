@@ -6,4 +6,8 @@ public class Vertex {
         this.idVertex = idVertex;
         this.edge = edge;
     }
+
+    public Vertex(){
+
+    }
 }

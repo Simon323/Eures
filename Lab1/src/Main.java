@@ -10,10 +10,12 @@ public class Main {
 
         GRASP grasp = new GRASP();
         NN nn = new NN();
+        CC cc = new CC();
         //grasp.Run();
         //nn.Run();
+        cc.Run();
 
-        System.out.println("GRASP");
+/*        System.out.println("GRASP");
         for (int i = 0; i < 100; i++) {
             graspList.add(grasp.Run());
         }
@@ -43,6 +45,6 @@ public class Main {
                 .max();
         System.out.println("[Algorytm]   [MIN]   [AV]   [MAX]");
         System.out.println("NN   "+nnMin+"   "+nnAv+"   "+nnMax);
-        System.out.println("GRASP   "+graspMin+"   "+graspAv+"   "+graspMax);
+        System.out.println("GRASP   "+graspMin+"   "+graspAv+"   "+graspMax);*/
     }
 }
