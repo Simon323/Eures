@@ -26,9 +26,11 @@ public class CC {
             }
         }
 
-        for (Integer temp : resultList){
-            System.out.println(temp);
+        for (Integer i: resultList){
+            System.out.print(i + ", ");
         }
+
+        System.out.println("Dystans " + distance);
 
         return distance;
     }

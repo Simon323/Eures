@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.DoubleSummaryStatistics;
 
 public class GRASP {
     public int Run(){
@@ -34,6 +35,8 @@ public class GRASP {
 
     public Vertex ChoiceRandomFromBestEdge(ArrayList<Vertex> edgeVertex, ArrayList<Integer> unusedVertexList){
 
+        int tenPercentCount = (int) Math.ceil(unusedVertexList.size() / 10.0);
+
         ArrayList<Vertex> bestEdgeList = new ArrayList<Vertex>();
 
         for (Integer unusedVertex : unusedVertexList){
@@ -45,11 +48,11 @@ public class GRASP {
                 }
             }
 
-            if(bestEdgeList.size() < 10){
+            if(bestEdgeList.size() < tenPercentCount){
                 bestEdgeList.add(currentVertex);
             }
 
-            if (bestEdgeList.size() >= 10){
+            if (bestEdgeList.size() >= tenPercentCount){
                 Vertex max = bestEdgeList.get(0);
                 for (int j = 1; j < bestEdgeList.size(); j++){
                     if(bestEdgeList.get(j).edge > max.edge){
