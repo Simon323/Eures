@@ -16,7 +16,7 @@ public class CC {
 
         while (true){
             VertexExtend bestVertex =  FindBestEdge(vertexList, unusedVertexList, resultList);
-            distance += bestVertex.edge;
+            //distance += bestVertex.edge;
             unusedVertexList.remove(new Integer(bestVertex.idVertex));
             int indexOfSelectedVertex = resultList.indexOf(bestVertex.selectedVertexNo);
             resultList.add(indexOfSelectedVertex, bestVertex.idVertex);
@@ -30,6 +30,13 @@ public class CC {
             System.out.print(i + ", ");
         }
 
+        /*for(int i = 0; i < 100; i++){
+            ArrayList<Vertex> cos = vertexList.get(i);
+
+
+        }
+
+        System.out.println("");*/
         System.out.println("Dystans " + distance);
 
         return distance;
