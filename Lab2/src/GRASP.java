@@ -27,10 +27,10 @@ public class GRASP {
         }
 
 
-        for (Integer i: resultList){
+        /*for (Integer i: resultList){
             System.out.print(i + ", ");
         }
-        System.out.println("Dystans " + distance);
+        System.out.println("Dystans " + distance);*/
         return resultList;
     }
 

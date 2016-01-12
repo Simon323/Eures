@@ -30,13 +30,7 @@ public class CC {
             System.out.print(i + ", ");
         }
 
-        /*for(int i = 0; i < 100; i++){
-            ArrayList<Vertex> cos = vertexList.get(i);
-
-
-        }
-
-        System.out.println("");*/
+        distance = Universal.CalculateDistance(resultList, vertexList);
         System.out.println("Dystans " + distance);
 
         return distance;

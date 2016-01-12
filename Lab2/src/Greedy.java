@@ -6,10 +6,10 @@ import java.util.stream.Collectors;
 
 public class Greedy {
 
-    public static void Run(ArrayList<ArrayList<Vertex>> vertexList, ArrayList<Integer> solution){
+    public static int Run(ArrayList<ArrayList<Vertex>> vertexList, ArrayList<Integer> solution){
         int distance = Universal.CalculateDistance(solution, vertexList);
         ArrayList<Integer> testSolution = (ArrayList<Integer>)solution.clone();
-        System.out.println("Start distance " + distance);
+        //System.out.println("Start distance " + distance);
 
         for (int i = 0; i < 100; i++){
             for(int j = 0; j < i; j++){
@@ -30,7 +30,12 @@ public class Greedy {
         }
 
         distance = Universal.CalculateDistance(solution,vertexList);
-        System.out.println("optimum distance " + distance);
-    //    return  distance;
+
+        for (Integer i: solution){
+            System.out.print(i + ", ");
+        }
+        System.out.println("Dystans " + distance);
+
+        return  distance;
     }
 }

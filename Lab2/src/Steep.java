@@ -3,10 +3,10 @@ import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 import java.util.ArrayList;
 
 public class Steep {
-    public static void Run(ArrayList<ArrayList<Vertex>> vertexList, ArrayList<Integer> solution){
+    public static int Run(ArrayList<ArrayList<Vertex>> vertexList, ArrayList<Integer> solution){
         int distance = Universal.CalculateDistance(solution, vertexList);
         ArrayList<ArrayList<Integer>> testSolutionList;
-        System.out.println("Start distance " + distance);
+        //System.out.println("Start distance " + distance);
 
         long startTime=System.currentTimeMillis();
         while (true){
@@ -20,12 +20,17 @@ public class Steep {
             }
         }
 
-        long endTime=System.currentTimeMillis();
-        System.out.println("Executing time: ");
-        System.out.print(Universal.CalculateTime(startTime, endTime));
+        //long endTime=System.currentTimeMillis();
+        //System.out.println("Executing time: ");
+        //System.out.print(Universal.CalculateTime(startTime, endTime));
         distance = Universal.CalculateDistance(solution,vertexList);
-        System.out.println("optimum distance " + distance);
-        //    return  distance;
+
+        for (Integer i: solution){
+            System.out.print(i + ", ");
+        }
+        System.out.println("Dystans " + distance);
+
+        return  distance;
     }
 
     public static ArrayList<ArrayList<Integer>> GeneratePotentialBetterSolution(ArrayList<Integer> solution){

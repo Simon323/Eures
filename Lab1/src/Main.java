@@ -14,7 +14,7 @@ public class Main {
         CC cc = new CC();
         //grasp.Run();
         //nn.Run();
-        cc.Run();
+        //cc.Run();
 
         /*System.out.println("GRASP");
         for (int i = 0; i < 100; i++) {
@@ -23,13 +23,13 @@ public class Main {
         System.out.println("NN");
         for (int i = 0; i < 100; i++) {
             nnList.add(nn.Run());
-        }
+        }*/
         System.out.println("CC");
         for (int i = 0; i < 100; i++) {
             ccList.add(cc.Run());
         }
 
-        OptionalDouble graspAv = graspList.stream()
+        /*OptionalDouble graspAv = graspList.stream()
                 .mapToInt(a -> a)
                 .average();
         OptionalInt graspMin = graspList.stream()
@@ -47,7 +47,7 @@ public class Main {
                 .min();
         OptionalInt nnMax = nnList.stream()
                 .mapToInt(a -> a)
-                .max();
+                .max();*/
 
         OptionalDouble ccAv = ccList.stream()
                 .mapToInt(a -> a)
@@ -60,8 +60,8 @@ public class Main {
                 .max();
 
         System.out.println("[Algorytm]   [MIN]   [AV]   [MAX]");
-        System.out.println("NN   "+nnMin+"   "+nnAv+"   "+nnMax);
-        System.out.println("GRASP   "+graspMin+"   "+graspAv+"   "+graspMax);
-        System.out.println("CC   "+ccMin+"   "+ccAv+"   "+ccMax);*/
+        /*System.out.println("NN   "+nnMin+"   "+nnAv+"   "+nnMax);
+        System.out.println("GRASP   "+graspMin+"   "+graspAv+"   "+graspMax);*/
+        System.out.println("CC   "+ccMin+"   "+ccAv+"   "+ccMax);
     }
 }
