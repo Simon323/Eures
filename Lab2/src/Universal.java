@@ -52,4 +52,12 @@ public final class Universal {
 
         return  distance;
     }
+
+    public static String CalculateTime(long startTime, long endTime){
+
+        int seconds = (int) ((endTime - startTime) / 1000) % 60 ;
+        int minutes = (int) (((endTime - startTime) / (1000*60)) % 60);
+
+        return minutes + ":" + seconds;
+    }
 }

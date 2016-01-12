@@ -9,7 +9,8 @@ public class Main {
     public static void main(String args[]){
         ArrayList<ArrayList<Vertex>> vertexList = Data.getVertexList();
         ArrayList<Integer> solution = GRASP.Run();
-        Greedy.Run(vertexList, solution);
+        //Greedy.Run(vertexList, solution);
+        Steep.Run(vertexList, solution);
         //ArrayList<Vertex> x = list.get(0);
         //Vertex zmienna = x.stream().filter(e -> e.idVertex == 3).collect(Collectors.toList()).get(0);
     }
